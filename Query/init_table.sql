@@ -1,4 +1,16 @@
-CREATE DATABASE QUANLYSACH;
+﻿CREATE DATABASE QUANLYSACH;
+
+-- Bảng thủ thư
+-- Chứ tài khoản, mật khẩu
+CREATE TABLE THUTHU 
+(
+	TaiKhoan char(30)primary key,
+	MatKhau char(30),
+	HoVaTen varchar(40),
+	NgaySinh datetime,
+	DiaChi varchar(100),
+	Avatar VARBINARY(MAX)
+)
 
 CREATE TABLE SACH
 (
