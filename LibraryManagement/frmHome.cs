@@ -97,7 +97,15 @@ namespace LibraryManagement
             setButtonThongKe();
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn thoát app?", "Thoát", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
 
-
+            
+        }
     }
 }

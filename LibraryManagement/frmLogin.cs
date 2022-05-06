@@ -34,5 +34,14 @@ namespace LibraryManagement
             this.panelLogin.BackColor = Color.White;
             this.btnLogin.BackColor = Color.FromArgb(5, 117, 230);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn thoát app?", "Thoát", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

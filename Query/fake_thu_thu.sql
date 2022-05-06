@@ -1,5 +1,4 @@
 ﻿-- Bảng thủ thư
--- Chứ tài khoản, mật khẩu
 /* CREATE TABLE THUTHU 
 (
 	TaiKhoan char(30)primary key,

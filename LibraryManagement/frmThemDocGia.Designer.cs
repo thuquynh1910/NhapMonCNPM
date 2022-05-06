@@ -30,7 +30,6 @@ namespace LibraryManagement
         private void InitializeComponent()
         {
             this.txtTitle = new System.Windows.Forms.Label();
-            this.btnDone = new System.Windows.Forms.Button();
             this.txtHoVaTen = new System.Windows.Forms.Label();
             this.boxHoVaTen = new System.Windows.Forms.TextBox();
             this.boxEmail = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@ namespace LibraryManagement
             this.txtNgaySinh = new System.Windows.Forms.Label();
             this.boxDiaChi = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.Label();
+            this.btnShow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -55,16 +55,6 @@ namespace LibraryManagement
             this.txtTitle.Size = new System.Drawing.Size(158, 29);
             this.txtTitle.TabIndex = 0;
             this.txtTitle.Text = "Thêm độc giả";
-            // 
-            // btnDone
-            // 
-            this.btnDone.Location = new System.Drawing.Point(391, 547);
-            this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(235, 44);
-            this.btnDone.TabIndex = 1;
-            this.btnDone.Text = "Cập nhật";
-            this.btnDone.UseVisualStyleBackColor = true;
-            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // txtHoVaTen
             // 
@@ -88,7 +78,6 @@ namespace LibraryManagement
             this.boxEmail.Name = "boxEmail";
             this.boxEmail.Size = new System.Drawing.Size(608, 27);
             this.boxEmail.TabIndex = 5;
-            this.boxEmail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtEmail
             // 
@@ -166,11 +155,22 @@ namespace LibraryManagement
             this.txtDiaChi.TabIndex = 14;
             this.txtDiaChi.Text = "Địa chỉ:";
             // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(18, 547);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(608, 44);
+            this.btnShow.TabIndex = 16;
+            this.btnShow.Text = "Hiển thị thẻ";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
             // frmThemDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 622);
+            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.boxDiaChi);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.dateNgaySinh);
@@ -183,7 +183,6 @@ namespace LibraryManagement
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.boxHoVaTen);
             this.Controls.Add(this.txtHoVaTen);
-            this.Controls.Add(this.btnDone);
             this.Controls.Add(this.txtTitle);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -198,7 +197,6 @@ namespace LibraryManagement
         #endregion
 
         private System.Windows.Forms.Label txtTitle;
-        private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.Label txtHoVaTen;
         private System.Windows.Forms.TextBox boxHoVaTen;
         private System.Windows.Forms.TextBox boxEmail;
@@ -211,5 +209,6 @@ namespace LibraryManagement
         private System.Windows.Forms.Label txtNgaySinh;
         private System.Windows.Forms.TextBox boxDiaChi;
         private System.Windows.Forms.Label txtDiaChi;
+        private System.Windows.Forms.Button btnShow;
     }
 }

@@ -33,3 +33,4 @@ C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\obj\Debug\Library
 C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
 C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\obj\Debug\LibraryManagement.exe
 C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\obj\Debug\LibraryManagement.pdb
+C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\obj\Debug\LibraryManagement.frmTheDocGia.resources

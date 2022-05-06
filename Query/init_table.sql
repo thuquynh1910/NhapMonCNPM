@@ -6,9 +6,9 @@ CREATE TABLE THUTHU
 (
 	TaiKhoan char(30)primary key,
 	MatKhau char(30),
-	HoVaTen varchar(40),
+	HoVaTen nvarchar(40),
 	NgaySinh datetime,
-	DiaChi varchar(100),
+	DiaChi nvarchar(100),
 	Avatar VARBINARY(MAX)
 )
 
@@ -29,14 +29,11 @@ CREATE TABLE SACH
 CREATE TABLE DOCGIA
 (
  MaDocGia char(10)primary key,
- HoTen char(40),
- DiaChi char(50),
- E_mail char(20),
+ HoTen nvarchar(40),
+ DiaChi nvarchar(50),
+ email char(30),
  NgayLapThe datetime,
- NgayHetHan datetime,
- MaLoaiDocGia char(10) NOT NULL,
- SoSachDangMuon int,
- TinhTrangThe char(20)
+ MaLoaiDocGia char(1) NOT NULL,
 )
 
 CREATE TABLE QDTHEDOCGIA

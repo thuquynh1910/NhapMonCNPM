@@ -38,6 +38,7 @@ namespace LibraryManagement
             this.boxMatKhau = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.Label();
             this.boxEmail = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +57,7 @@ namespace LibraryManagement
             // panelLogin
             // 
             this.panelLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelLogin.Controls.Add(this.btnExit);
             this.panelLogin.Controls.Add(this.pictureBox1);
             this.panelLogin.Controls.Add(this.txtTitle);
             this.panelLogin.Controls.Add(this.txtLoginResult);
@@ -136,6 +138,18 @@ namespace LibraryManagement
             this.boxEmail.Size = new System.Drawing.Size(245, 27);
             this.boxEmail.TabIndex = 1;
             // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(751, 480);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 34);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,5 +177,6 @@ namespace LibraryManagement
         private System.Windows.Forms.Label txtLoginResult;
         private System.Windows.Forms.Label txtTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExit;
     }
 }

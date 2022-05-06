@@ -31,15 +31,15 @@ namespace LibraryManagement
         {
             this.sideBar = new System.Windows.Forms.Panel();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnThongKe = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.Label();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDocGia = new System.Windows.Forms.Button();
-            this.btnThongKe = new System.Windows.Forms.Button();
+            this.txtTitle = new System.Windows.Forms.Label();
             this.btnSach = new System.Windows.Forms.Button();
+            this.btnDocGia = new System.Windows.Forms.Button();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.sideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,7 @@ namespace LibraryManagement
             // 
             this.sideBar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.sideBar.Controls.Add(this.btnHelp);
-            this.sideBar.Controls.Add(this.btnLogOut);
+            this.sideBar.Controls.Add(this.btnExit);
             this.sideBar.Controls.Add(this.btnThongKe);
             this.sideBar.Controls.Add(this.txtEmail);
             this.sideBar.Controls.Add(this.txtName);
@@ -74,16 +74,31 @@ namespace LibraryManagement
             this.btnHelp.Text = "Trợ giúp";
             this.btnHelp.UseVisualStyleBackColor = true;
             // 
-            // btnLogOut
+            // btnExit
             // 
-            this.btnLogOut.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.Black;
-            this.btnLogOut.Location = new System.Drawing.Point(13, 764);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(95, 34);
-            this.btnLogOut.TabIndex = 6;
-            this.btnLogOut.Text = "Đăng xuất";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnExit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(13, 764);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 34);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 263);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnThongKe.Size = new System.Drawing.Size(300, 40);
+            this.btnThongKe.TabIndex = 5;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // txtEmail
             // 
@@ -91,7 +106,7 @@ namespace LibraryManagement
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(94, 110);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(168, 16);
+            this.txtEmail.Size = new System.Drawing.Size(167, 16);
             this.txtEmail.TabIndex = 4;
             this.txtEmail.Text = "ichimoku.0902@gmail.com";
             // 
@@ -105,6 +120,16 @@ namespace LibraryManagement
             this.txtName.TabIndex = 4;
             this.txtName.Text = "Trần Thu Quỳnh";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources._186507979_867690547165399_9139087306152454614_n;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtTitle
             // 
             this.txtTitle.AutoSize = true;
@@ -115,23 +140,19 @@ namespace LibraryManagement
             this.txtTitle.TabIndex = 2;
             this.txtTitle.Text = "Quản lý thư viện";
             // 
-            // panelContent
+            // btnSach
             // 
-            this.panelContent.ForeColor = System.Drawing.Color.DarkGray;
-            this.panelContent.Location = new System.Drawing.Point(306, 0);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1135, 810);
-            this.panelContent.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources._186507979_867690547165399_9139087306152454614_n;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.btnSach.FlatAppearance.BorderSize = 0;
+            this.btnSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSach.Location = new System.Drawing.Point(0, 217);
+            this.btnSach.Name = "btnSach";
+            this.btnSach.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSach.Size = new System.Drawing.Size(300, 40);
+            this.btnSach.TabIndex = 1;
+            this.btnSach.Text = "Quản lý sách";
+            this.btnSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSach.UseVisualStyleBackColor = true;
+            this.btnSach.Click += new System.EventHandler(this.btnSach_Click);
             // 
             // btnDocGia
             // 
@@ -151,33 +172,13 @@ namespace LibraryManagement
             this.btnDocGia.UseVisualStyleBackColor = false;
             this.btnDocGia.Click += new System.EventHandler(this.btnDocGia_Click);
             // 
-            // btnThongKe
+            // panelContent
             // 
-            this.btnThongKe.FlatAppearance.BorderSize = 0;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 263);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnThongKe.Size = new System.Drawing.Size(300, 40);
-            this.btnThongKe.TabIndex = 5;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.UseVisualStyleBackColor = true;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // btnSach
-            // 
-            this.btnSach.FlatAppearance.BorderSize = 0;
-            this.btnSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSach.Location = new System.Drawing.Point(0, 217);
-            this.btnSach.Name = "btnSach";
-            this.btnSach.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSach.Size = new System.Drawing.Size(300, 40);
-            this.btnSach.TabIndex = 1;
-            this.btnSach.Text = "Quản lý sách";
-            this.btnSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSach.UseVisualStyleBackColor = true;
-            this.btnSach.Click += new System.EventHandler(this.btnSach_Click);
+            this.panelContent.ForeColor = System.Drawing.Color.DarkGray;
+            this.panelContent.Location = new System.Drawing.Point(306, 0);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1135, 810);
+            this.panelContent.TabIndex = 2;
             // 
             // frmHome
             // 
@@ -206,7 +207,7 @@ namespace LibraryManagement
         private System.Windows.Forms.Label txtName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnSach;
