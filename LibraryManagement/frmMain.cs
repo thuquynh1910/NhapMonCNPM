@@ -15,8 +15,11 @@ namespace LibraryManagement
     {
 
         public static Form formLogin = new frmLogin();
-        public static Form formHome = new frmHome();
+        public static Form formHome;
         public static Panel mainPanel = new Panel();
+        public static String taiKhoan = "";
+        public static String hoVaTen = "";
+        public static String email = "";
         public frmMain()
         {
             InitializeComponent();
@@ -28,9 +31,7 @@ namespace LibraryManagement
             formLogin.TopLevel = false;
             formLogin.AutoScroll = true;
 
-            // init form Home
-            formHome.TopLevel = false;
-            formHome.AutoScroll = true;
+           
 
             // init main panel
             mainPanel.Size = this.Size;
@@ -53,21 +54,30 @@ namespace LibraryManagement
 
         private static void showHomeForm()
         {
+            // add hoVaTen, email
+            formHome = new frmHome(hoVaTen, email);
+            // init form Home
+            formHome.TopLevel = false;
+            formHome.AutoScroll = true;
+            // add to panel
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(formHome);
             formHome.Show();
         }
 
-        public static bool login(String email, String password)
+        public static bool login(String _email, String _password)
         {
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VOCQ70B;Initial Catalog=QLTV;Integrated Security=True");
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM THUTHU WHERE TaiKhoan='" + email + "' AND MatKhau='" + password + "'", con);
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-UK1PH6M;Initial Catalog=QUANLYSACH;Integrated Security=True");
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM THUTHU WHERE TaiKhoan='" + _email + "' AND MatKhau='" + _password + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-            if (dt.Rows[0][0].ToString() == "1")
+            if (dt.Rows.Count == 1)
             {
+                taiKhoan = email;
+                hoVaTen = dt.Rows[0]["HoVaTen"].ToString();
+                email = _email;
                 showHomeForm();
                 return true;
             }

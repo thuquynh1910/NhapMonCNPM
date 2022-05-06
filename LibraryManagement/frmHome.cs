@@ -15,8 +15,12 @@ namespace LibraryManagement
         public static Form formQuanLyDocGia = new frmQuanLyDocGia();
         public static Form formQuanLySach = new frmQuanLySach();
         public static Form formThongKe = new frmThongKe();
-        public frmHome()
+        String hoVaTen = "";
+        String email = "";
+        public frmHome(String _hoVaTen, String _email)
         {
+            hoVaTen = _hoVaTen;
+            email = _email;
             InitializeComponent();
         }
 
@@ -36,6 +40,10 @@ namespace LibraryManagement
             // init form Thong Ke
             formThongKe.TopLevel = false;
             formThongKe.AutoScroll = true;
+
+            // init info user
+            txtName.Text = hoVaTen;
+            txtEmail.Text = email;
 
 
             setButtonQuanLyDocGia();
