@@ -1,0 +1,17 @@
+C:\Winform\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe.config
+C:\Winform\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe
+C:\Winform\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.pdb
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.AssemblyReference.cache
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.frmMain.resources
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.cache
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.frmLogin.resources
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.frmHome.resources
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.frmQuanLyDocGia.resources
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.frmQuanLySach.resources
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.frmThongKe.resources
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.frmThemDocGia.resources
+C:\Winform\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.frmThemSach.resources
