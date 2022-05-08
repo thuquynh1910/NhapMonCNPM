@@ -29,7 +29,7 @@ HoTen,
 DiaChi, 
 email, 
 NgayLapThe, 
-NgayHetHan
+NgayHetHan,
 MaLoaiDocGia
 )
 VALUES 

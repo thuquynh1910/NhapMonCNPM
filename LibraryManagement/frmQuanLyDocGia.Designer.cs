@@ -30,6 +30,7 @@
         {
             this.btnThemDocGia = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnChoMuonSach = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -37,7 +38,7 @@
             // 
             this.btnThemDocGia.Location = new System.Drawing.Point(971, 13);
             this.btnThemDocGia.Name = "btnThemDocGia";
-            this.btnThemDocGia.Size = new System.Drawing.Size(152, 54);
+            this.btnThemDocGia.Size = new System.Drawing.Size(152, 28);
             this.btnThemDocGia.TabIndex = 0;
             this.btnThemDocGia.Text = "Thêm Độc giả";
             this.btnThemDocGia.UseVisualStyleBackColor = true;
@@ -48,21 +49,31 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 73);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 47);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1111, 725);
+            this.dataGridView1.Size = new System.Drawing.Size(1111, 751);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // btnChoMuonSach
+            // 
+            this.btnChoMuonSach.Location = new System.Drawing.Point(813, 12);
+            this.btnChoMuonSach.Name = "btnChoMuonSach";
+            this.btnChoMuonSach.Size = new System.Drawing.Size(152, 28);
+            this.btnChoMuonSach.TabIndex = 2;
+            this.btnChoMuonSach.Text = "Cho mượn sách";
+            this.btnChoMuonSach.UseVisualStyleBackColor = true;
             // 
             // frmQuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 810);
+            this.Controls.Add(this.btnChoMuonSach);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnThemDocGia);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmQuanLyDocGia";
             this.Text = "frmQuanLyDocGia";
             this.Load += new System.EventHandler(this.frmQuanLyDocGia_Load);
@@ -75,5 +86,6 @@
 
         private System.Windows.Forms.Button btnThemDocGia;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnChoMuonSach;
     }
 }

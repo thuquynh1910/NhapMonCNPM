@@ -23,6 +23,7 @@ CREATE TABLE SACH
  NgayNhap datetime,
  KhoangCachXuatBan int,
  MaTinhTrang char(1)
+ PRIMARY KEY (MaSach)
  )
 
 
@@ -60,10 +61,13 @@ TenTheLoai char(20)
 
 CREATE TABLE PHIEUMUONSACH
 (
-MaDocGia char(10)primary key,
-MaSach char(10),
+MaPhieu int NOT NULL IDENTITY(1, 1),
+MaDocGia int NOT NULL,
+MaSach int NOT NULL,
 NgayMuonSach datetime,
 NgayTraSach datetime
+PRIMARY KEY (MaPhieu)
+FOREIGN KEY (MaSach) REFERENCES dbo.SACH(MaSach)
 );
 
 CREATE TABLE BAOCAOTRATRE
