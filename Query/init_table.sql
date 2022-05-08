@@ -14,26 +14,28 @@ CREATE TABLE THUTHU
 
 CREATE TABLE SACH
 (
- MaSach char(10)primary key,
- TenSach char(30),
- Matheloai char(10),
- TacGia char(50),
- NhaXuatBan char(100),
+ MaSach int NOT NULL IDENTITY(1, 1),
+ TenSach nvarchar(30),
+ Matheloai char(1),
+ TacGia nvarchar(50),
+ NhaXuatBan nvarchar(100),
  NamXuatBan int,
  NgayNhap datetime,
+ KhoangCachXuatBan int,
+ MaTinhTrang char(1)
  )
- ALTER TABLE SACH ADD KhoangCachXuatBan int;
- ALTER TABLE SACH ADD MaTinhTrang char;
 
 
 CREATE TABLE DOCGIA
 (
- MaDocGia char(10)primary key,
+ MaDocGia int NOT NULL IDENTITY(1, 1),
  HoTen nvarchar(40),
  DiaChi nvarchar(50),
- email char(30),
+ Email char(30),
  NgayLapThe datetime,
+ NgayHetHan datetime,
  MaLoaiDocGia char(1) NOT NULL,
+ PRIMARY KEY (MaDocGia)
 )
 
 CREATE TABLE QDTHEDOCGIA

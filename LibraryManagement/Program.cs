@@ -8,6 +8,7 @@ namespace LibraryManagement
 {
     static class Program
     {
+        public static String connect = @"Data Source=DESKTOP-UK1PH6M;Initial Catalog=QUANLYSACH;Integrated Security=True";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

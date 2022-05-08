@@ -33,7 +33,7 @@ namespace LibraryManagement
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-VOCQ70B;Initial Catalog=SACH;Integrated Security=True");
+            SqlConnection con = new SqlConnection(Program.connect);
             this.Close();
         }
 

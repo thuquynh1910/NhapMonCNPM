@@ -104,6 +104,7 @@
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\docGiaModel.cs" />
+    <Compile Include="Model\sachModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmHome.resx">

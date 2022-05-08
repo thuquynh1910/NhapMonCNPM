@@ -47,8 +47,8 @@ namespace LibraryManagement.Model
 
         public void toDatabse()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-UK1PH6M;Initial Catalog=QUANLYSACH;Integrated Security=True");
-            String query = "INSERT INTO QUANLYSACH.dbo.DOCGIA (HoTen,DiaChi,email,NgayLapThe,MaLoaiDocGia)VALUES(N'" + this.hoTen + "',N'" + this.diaChi + "','" + this.email + "','" + this.toSqlFormat(this.ngayLapThe) + "','" + this.maLoaiDocGia + "'); ";
+            SqlConnection con = new SqlConnection(Program.connect);
+            String query = "INSERT INTO QUANLYSACH.dbo.DOCGIA (HoTen,DiaChi,email,NgayLapThe, NgayHetHan,MaLoaiDocGia)VALUES(N'" + this.hoTen + "',N'" + this.diaChi + "','" + this.email + "','" + this.toSqlFormat(this.ngayLapThe) + "', '" + this.toSqlFormat(this.ngayHetHan) + "' ,'" + this.maLoaiDocGia + "'); ";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
