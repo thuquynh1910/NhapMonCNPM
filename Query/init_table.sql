@@ -65,9 +65,10 @@ MaPhieu int NOT NULL IDENTITY(1, 1),
 MaDocGia int NOT NULL,
 MaSach int NOT NULL,
 NgayMuonSach datetime,
-NgayTraSach datetime
-PRIMARY KEY (MaPhieu)
-FOREIGN KEY (MaSach) REFERENCES dbo.SACH(MaSach)
+NgayTraSach datetime,
+PRIMARY KEY (MaPhieu),
+FOREIGN KEY (MaSach) REFERENCES dbo.SACH(MaSach),
+FOREIGN KEY (MaDocGia) REFERENCES dbo.DOCGIA(MaDocGia)
 );
 
 CREATE TABLE BAOCAOTRATRE

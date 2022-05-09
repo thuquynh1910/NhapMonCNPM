@@ -62,6 +62,7 @@
             this.btnChoMuonSach.TabIndex = 2;
             this.btnChoMuonSach.Text = "Cho mượn sách";
             this.btnChoMuonSach.UseVisualStyleBackColor = true;
+            this.btnChoMuonSach.Click += new System.EventHandler(this.btnChoMuonSach_Click);
             // 
             // frmQuanLyDocGia
             // 

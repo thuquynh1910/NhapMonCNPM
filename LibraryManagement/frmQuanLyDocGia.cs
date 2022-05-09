@@ -48,5 +48,10 @@ namespace LibraryManagement
         {
             loadDocGia();
         }
+
+        private void btnChoMuonSach_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
