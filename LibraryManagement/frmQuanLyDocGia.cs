@@ -59,5 +59,11 @@ namespace LibraryManagement
         {
             loadDocGia();
         }
+
+        private void btnTraSach_Click(object sender, EventArgs e)
+        {
+            var formTraSach = new frmTraSach();
+            formTraSach.ShowDialog();
+        }
     }
 }

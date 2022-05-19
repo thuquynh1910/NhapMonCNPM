@@ -17,22 +17,10 @@ SELECT TOP (1000) [MaPhieu]
       ,[MaDocGia]
       ,[MaSach]
       ,[NgayMuonSach]
-      ,[NgayTraSach]
   FROM [QUANLYSACH].[dbo].[PHIEUMUONSACH]
 
-INSERT INTO QUANLYSACH.dbo.PHIEUMUONSACH
-( 
-MaDocGia, 
-MaSach, 
-NgayMuonSach, 
-NgayTraSach
-)
-VALUES 
-(
-'2', 
-'3', 
-'2022-5-6',
-'2022-8-6'
-);
+INSERT INTO PHIEUMUONSACH (MaDocGia, MaSach, NgayMuonSach) VALUES ('2', '3', '2022-1-2');
 
-SELECT * FROM QUANLYSACH.dbo.PHIEUMUONSACH
+SELECT * FROM PHIEUMUONSACH
+
+SELECT * FROM PHIEUMUONSACH WHERE MaPhieu = 2 

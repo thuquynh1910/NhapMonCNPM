@@ -13,6 +13,8 @@ namespace LibraryManagement.Model
         public int maPhieu { get; set; }
         public int maDocGia { get; set; }
         public int maSach { get; set; }
+
+        public int tinhTrang { get; set; }
         public DateTime ngayMuon { get; set; }
         public DateTime ngayTra { get; set; }
 
@@ -32,13 +34,13 @@ namespace LibraryManagement.Model
 
         public void thuatToan()
         {
-            this.ngayTra = ngayMuon.AddMonths(3);
+            // 
         }
 
         public void toDatabse()
         {
             SqlConnection con = new SqlConnection(Program.connect);
-            String query = "INSERT INTO PHIEUMUONSACH (MaDocGia, MaSach, NgayMuonSach, NgayTraSach) VALUES ('" + this.maDocGia + "', '" + this.maSach + "', '" + toSqlFormat(this.ngayMuon) + "','" + toSqlFormat(this.ngayTra) + "'); ";
+            String query = "INSERT INTO PHIEUMUONSACH (MaDocGia, MaSach, NgayMuonSach) VALUES ('" + this.maDocGia + "', '" + this.maSach + "', '" + toSqlFormat(this.ngayMuon) + "'); ";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
