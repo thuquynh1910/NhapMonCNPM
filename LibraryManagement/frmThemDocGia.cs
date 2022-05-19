@@ -45,7 +45,7 @@ namespace LibraryManagement
                 docGia.thuatToan();
                 if (docGia.tuoiDocGia >= 18 && docGia.tuoiDocGia <= 55)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Tuổi độc giả là " + docGia.tuoiDocGia.ToString() + " hợp lệ. Ngày hết hạn là " + docGia.toSqlFormat(docGia.ngayHetHan) + ". Bạn có muốn in thẻ", "Độc giả", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Tuổi độc giả là " + docGia.tuoiDocGia.ToString() + " hợp lệ. Bạn có muốn in thẻ", "Độc giả", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         docGia.toDatabse();

@@ -52,14 +52,14 @@ namespace LibraryManagement
                 using (SqlConnection sqlCon = new SqlConnection(Program.connect))
                 {
                     sqlCon.Open();
-                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM PHIEUMUONSACH WHERE MaPhieu = " + comboMaPhieu.Text, sqlCon);
+                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM PHIEUMUONSACH WHERE MaPhieu = '" + comboMaPhieu.Text +"'", sqlCon);
                     DataTable dtbl = new DataTable();
                     sqlDa.Fill(dtbl);
 
                     if (dtbl.Rows[0].ItemArray[4] == null)
                     {
                         MessageBox.Show("Phiếu đã trả sách", "", MessageBoxButtons.OK); 
-                        button1.Enabled = false;
+                        btnTraSach.Enabled = false;
                     }
                     else
                     {
@@ -85,6 +85,25 @@ namespace LibraryManagement
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTraSach_Click(object sender, EventArgs e)
+        {
+
+            SqlConnection sqlCon = new SqlConnection(Program.connect);
+            sqlCon.Open();
+            SqlDataAdapter sqlDa = new SqlDataAdapter("UPDATE PHIEUMUONSACH SET PHIEUMUONSACH.NgayTraSach = GETDATE() WHERE PHIEUMUONSACH.MaPhieu = '" + comboMaPhieu.Text + "'   UPDATE SACH SET SACH.MaTinhTrang = 'TT0002' WHERE SACH.MaSach = '"+ this.boxMaSach.Text +"'", sqlCon);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+
+            if (this.boxTreHan.Text == "0")
+            {
+                MessageBox.Show("Đã trả sách", "", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Độc giả nợ " + this.boxTienPhat.Text , "", MessageBoxButtons.OK);
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ namespace LibraryManagement
             txtHoVaTen.Text = docGia.hoTen;
             txtMaDocGia.Text = docGia.maDocGia.ToString();
             txtMaLoaiDocGia.Text = docGia.maLoaiDocGia;
-            txtNgayHetHan.Text = docGia.toSqlFormat(docGia.ngayHetHan);
+            txtNgayHetHan.Text = docGia.toSqlFormat(docGia.ngayLapThe.AddDays(90));
             txtNgayLapThe.Text = docGia.toSqlFormat(docGia.ngayLapThe);
             
         }

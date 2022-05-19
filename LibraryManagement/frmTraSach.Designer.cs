@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTraSach = new System.Windows.Forms.Button();
             this.boxMaDocGia = new System.Windows.Forms.Label();
             this.boxMaSach = new System.Windows.Forms.Label();
             this.boxNgayMuon = new System.Windows.Forms.Label();
@@ -122,14 +122,15 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Trễ hạn:";
             // 
-            // button1
+            // btnTraSach
             // 
-            this.button1.Location = new System.Drawing.Point(16, 411);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(310, 44);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Trả sách";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTraSach.Location = new System.Drawing.Point(16, 411);
+            this.btnTraSach.Name = "btnTraSach";
+            this.btnTraSach.Size = new System.Drawing.Size(310, 44);
+            this.btnTraSach.TabIndex = 23;
+            this.btnTraSach.Text = "Trả sách";
+            this.btnTraSach.UseVisualStyleBackColor = true;
+            this.btnTraSach.Click += new System.EventHandler(this.btnTraSach_Click);
             // 
             // boxMaDocGia
             // 
@@ -193,7 +194,7 @@
             this.Controls.Add(this.boxNgayMuon);
             this.Controls.Add(this.boxMaSach);
             this.Controls.Add(this.boxMaDocGia);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTraSach);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -203,7 +204,7 @@
             this.Controls.Add(this.comboMaPhieu);
             this.Controls.Add(this.txtTitle);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTraSach";
             this.Text = "frmTraSach";
             this.Load += new System.EventHandler(this.frmTraSach_Load);
@@ -222,7 +223,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTraSach;
         private System.Windows.Forms.Label boxMaDocGia;
         private System.Windows.Forms.Label boxMaSach;
         private System.Windows.Forms.Label boxNgayMuon;

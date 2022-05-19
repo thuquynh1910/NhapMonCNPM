@@ -29,7 +29,7 @@ namespace LibraryManagement
             using (SqlConnection sqlCon  = new SqlConnection(Program.connect))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM QUANLYSACH.dbo.DOCGIA ", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT DG.MaDocGia, DG.HoTen, DG.NgaySinh, DG.DiaChi, DG.Email, DG.NgayLapThe, DG.MaLoaiDocGia, LDG.TenLoaiDocGia FROM DOCGIA DG INNER JOIN LOAIDOCGIA LDG ON DG.MaLoaiDocGia = LDG.MaLoaiDocGia ", sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
 
@@ -37,10 +37,11 @@ namespace LibraryManagement
 
                 dataGridView1.Columns["MaDocGia"].HeaderText = "Mã độc giả";
                 dataGridView1.Columns["HoTen"].HeaderText = "Họ và tên";
+                dataGridView1.Columns["NgaySinh"].HeaderText = "Ngày sinh";
                 dataGridView1.Columns["DiaChi"].HeaderText = "Địa chỉ";
                 dataGridView1.Columns["Email"].HeaderText = "Email";
                 dataGridView1.Columns["NgayLapThe"].HeaderText = "Ngày lập thẻ";
-                dataGridView1.Columns["NgayHetHan"].HeaderText = "Ngày hết hạn";
+                dataGridView1.Columns["TenLoaiDocGia"].HeaderText = "Tên loại độc giả";
             }
         }
 

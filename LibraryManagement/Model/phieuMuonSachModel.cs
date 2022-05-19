@@ -10,16 +10,16 @@ namespace LibraryManagement.Model
 {
     internal class phieuMuonSachModel
     {
-        public int maPhieu { get; set; }
-        public int maDocGia { get; set; }
-        public int maSach { get; set; }
+        public String maPhieu { get; set; }
+        public String maDocGia { get; set; }
+        public String maSach { get; set; }
 
         public int tinhTrang { get; set; }
         public DateTime ngayMuon { get; set; }
         public DateTime ngayTra { get; set; }
 
 
-        public phieuMuonSachModel(int _maDocGia, int _maSach)
+        public phieuMuonSachModel(String _maDocGia, String _maSach)
         {
             maDocGia = _maDocGia;   
             maSach = _maSach;   
@@ -40,16 +40,12 @@ namespace LibraryManagement.Model
         public void toDatabse()
         {
             SqlConnection con = new SqlConnection(Program.connect);
-            String query = "INSERT INTO PHIEUMUONSACH (MaDocGia, MaSach, NgayMuonSach) VALUES ('" + this.maDocGia + "', '" + this.maSach + "', '" + toSqlFormat(this.ngayMuon) + "'); ";
+            String query = "INSERT INTO PHIEUMUONSACH (MaDocGia, MaSach, NgayMuonSach)  OUTPUT INSERTED.MaDocGia VALUES ('" + this.maDocGia + "', '" + this.maSach + "', '" + toSqlFormat(this.ngayMuon) + "');    UPDATE SACH SET SACH.MaTinhTrang = 'TT0002' WHERE SACH.MaSach = '"+this.maSach+"'";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-
-            SqlDataAdapter checkId = new SqlDataAdapter("SELECT * FROM PHIEUMUONSACH", con);
-            dt = new DataTable();
-            checkId.Fill(dt);
-            maDocGia = dt.Rows.Count;
+            maDocGia = dt.Rows[0].ItemArray[0].ToString();
         
         }
     }

@@ -23,7 +23,7 @@ namespace LibraryManagement.Model
 {
     public partial class sachModel
     {
-        public int maSach { get; set; }
+        public String maSach { get; set; }
         public String tenSach { get; set; }
         public String maTheLoai { get; set; }
         public String tacGia { get; set; }
@@ -60,16 +60,12 @@ namespace LibraryManagement.Model
         public void toDatabse()
         {
             SqlConnection con = new SqlConnection(Program.connect);
-            String query = "INSERT INTO QUANLYSACH.dbo.SACH (TenSach, Matheloai, TacGia, NhaXuatBan, NamXuatBan, NgayNhap, KhoangCachXuatBan, MaTinhTrang) VALUES (N'"+tenSach+"','A',N'"+tacGia+"',N'"+nhaXuatBan+"',"+namXuatBan+",'"+ngayNhap+"',"+khoangCachNamXuatBan+",'"+maTinhTrang+"');";
+            String query = "INSERT INTO QUANLYSACH.dbo.SACH (TenSach, Matheloai, TacGia, NhaXuatBan, NamXuatBan, NgayNhap, KhoangCachXuatBan, MaTinhTrang) OUTPUT INSERTED.MaSach VALUES (N'" + tenSach+"','A',N'"+tacGia+"',N'"+nhaXuatBan+"',"+namXuatBan+",'"+ngayNhap+"',"+khoangCachNamXuatBan+",'"+maTinhTrang+"');";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-
-            SqlDataAdapter checkId = new SqlDataAdapter("SELECT * FROM QUANLYSACH.dbo.SACH", con);
-            dt = new DataTable();
-            checkId.Fill(dt);
-            maSach = dt.Rows.Count;
+            maSach = dt.Rows[0].ItemArray[0].ToString();
         }
     }
 }

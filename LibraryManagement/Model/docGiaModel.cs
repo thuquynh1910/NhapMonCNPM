@@ -12,14 +12,13 @@ namespace LibraryManagement.Model
 {
     public partial class docGiaModel
     {
-        public int maDocGia  { get; set; }
+        public String maDocGia  { get; set; }
         public String hoTen { get; set; }
         public String diaChi { get; set; }
         public String email { get; set; }
         public DateTime ngaySinh { get; set; }
         public DateTime ngayLapThe { get; set; }
         public String maLoaiDocGia { get; set; }
-        public DateTime ngayHetHan { get; set; }
         public int tuoiDocGia { get; set; }
 
 
@@ -41,14 +40,13 @@ namespace LibraryManagement.Model
 
         public void thuatToan()
         {
-            this.ngayHetHan = ngayLapThe.AddMonths(6);
             this.tuoiDocGia = ngayLapThe.Subtract(ngaySinh).Days / 365;
         }
 
         public void toDatabse()
         {
             SqlConnection con = new SqlConnection(Program.connect);
-            String query = "INSERT INTO QUANLYSACH.dbo.DOCGIA (HoTen,DiaChi,email,NgayLapThe, NgayHetHan,MaLoaiDocGia)VALUES(N'" + this.hoTen + "',N'" + this.diaChi + "','" + this.email + "','" + this.toSqlFormat(this.ngayLapThe) + "', '" + this.toSqlFormat(this.ngayHetHan) + "' ,'" + this.maLoaiDocGia + "'); ";
+            String query = "INSERT INTO QUANLYSACH.dbo.DOCGIA (HoTen, NgaySinh, DiaChi, email, NgayLapThe, MaLoaiDocGia) OUTPUT INSERTED.MaDocGia VALUES(N'" + this.hoTen + "', '" + this.toSqlFormat(this.ngaySinh) + "'  ,N'" + this.diaChi + "','" + this.email + "','" + this.toSqlFormat(this.ngayLapThe) + "' ,'" + this.maLoaiDocGia + "'); ";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -57,7 +55,7 @@ namespace LibraryManagement.Model
             SqlDataAdapter checkId = new SqlDataAdapter("SELECT * FROM QUANLYSACH.dbo.DOCGIA", con);
             dt = new DataTable();
             checkId.Fill(dt);
-            maDocGia = dt.Rows.Count ;
+            maDocGia = dt.Rows[0].ItemArray[0].ToString();
         }
     }
 }

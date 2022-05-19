@@ -26,7 +26,7 @@ namespace LibraryManagement
             using (SqlConnection sqlCon = new SqlConnection(Program.connect))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT [MaSach] FROM QUANLYSACH.dbo.SACH WHERE MaTinhTrang = 'T'", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT [MaSach] FROM QUANLYSACH.dbo.SACH WHERE MaTinhTrang = 'TT0003'", sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
 
@@ -40,7 +40,7 @@ namespace LibraryManagement
             using (SqlConnection sqlCon = new SqlConnection(Program.connect))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT [MaDocGia] FROM QUANLYSACH.dbo.DOCGIA WHERE NgayHetHan >= GETDATE()", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT MaDocGia FROM DOCGIA", sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
 
@@ -56,7 +56,7 @@ namespace LibraryManagement
         {
             if (this.comboMaDocGia.Text.Length > 0 && this.comboSach.Text.Length > 0 )
             {
-                phieuMuonSachModel phieuMuonSach = new phieuMuonSachModel(int.Parse(comboMaDocGia.Text) , int.Parse(comboSach.Text));
+                phieuMuonSachModel phieuMuonSach = new phieuMuonSachModel(comboMaDocGia.Text , comboSach.Text);
                 phieuMuonSach.thuatToan();
                 phieuMuonSach.toDatabse();
                 //if (docGia.tuoiDocGia >= 18 && docGia.tuoiDocGia <= 55)

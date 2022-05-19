@@ -14,6 +14,7 @@ CREATE TABLE SACH
  MaTinhTrang char(1)
  )*/
 
+
  /****** Script for SelectTopNRows command from SSMS  ******/
 SELECT TOP (1000) [MaSach]
       ,[TenSach]
@@ -30,4 +31,4 @@ INSERT INTO QUANLYSACH.dbo.SACH
 (TenSach, Matheloai, TacGia, NhaXuatBan, NamXuatBan, NgayNhap, KhoangCachXuatBan, MaTinhTrang)
 VALUES (N'Nhà Giả Kim','A',N'Paulo Coelho',N'Nhã Nam',2017,'2022-6-5',5,'T');
 
-SELECT * FROM QUANLYSACH.dbo.SACH 
+SELECT [MaSach] FROM QUANLYSACH.dbo.SACH WHERE MaTinhTrang = 'T'

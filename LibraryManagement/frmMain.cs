@@ -71,23 +71,23 @@ namespace LibraryManagement
             showHomeForm();
             return true;
             SqlConnection con = new SqlConnection(Program.connect);
-            //SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM THUTHU WHERE TaiKhoan='" + _email + "' AND MatKhau='" + _password + "'", con);
-            //DataTable dt = new DataTable();
-            //sda.Fill(dt);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM THUTHU WHERE TaiKhoan='" + _email + "' AND MatKhau='" + _password + "'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
 
-            //if (dt.Rows.Count == 1)
-            //{
-            //    taiKhoan = email;
-            //    hoVaTen = dt.Rows[0]["HoVaTen"].ToString();
-            //    email = _email;
-            //    showHomeForm();
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
-                
+            if (dt.Rows.Count == 1)
+            {
+                taiKhoan = email;
+                hoVaTen = dt.Rows[0]["HoVaTen"].ToString();
+                email = _email;
+                showHomeForm();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
     }
