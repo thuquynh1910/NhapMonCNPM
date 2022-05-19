@@ -51,7 +51,13 @@ namespace LibraryManagement
 
         private void btnChoMuonSach_Click(object sender, EventArgs e)
         {
+            var formChoMuonSach = new frmChoMuonSach();
+            formChoMuonSach.ShowDialog();
+        }
 
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            loadDocGia();
         }
     }
 }

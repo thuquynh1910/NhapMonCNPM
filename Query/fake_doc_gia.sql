@@ -43,3 +43,5 @@ N'Tân Kiều, Ninh Đa, Ninh Hòa, Khánh Hòa',
 );
 
 SELECT * FROM QUANLYSACH.dbo.DOCGIA
+
+SELECT [MaDocGia] FROM QUANLYSACH.dbo.DOCGIA WHERE NgayHetHan <= GETDATE()

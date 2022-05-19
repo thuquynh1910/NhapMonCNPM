@@ -70,7 +70,7 @@ namespace LibraryManagement
         {
             showHomeForm();
             return true;
-            //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-UK1PH6M;Initial Catalog=QUANLYSACH;Integrated Security=True");
+            SqlConnection con = new SqlConnection(Program.connect);
             //SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM THUTHU WHERE TaiKhoan='" + _email + "' AND MatKhau='" + _password + "'", con);
             //DataTable dt = new DataTable();
             //sda.Fill(dt);

@@ -34,6 +34,7 @@ namespace LibraryManagement
             this.boxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
+            this.btnTraSach = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@ namespace LibraryManagement
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(921, 28);
+            this.btnReload.Location = new System.Drawing.Point(817, 26);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(86, 27);
             this.btnReload.TabIndex = 6;
@@ -84,11 +85,21 @@ namespace LibraryManagement
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
+            // btnTraSach
+            // 
+            this.btnTraSach.Location = new System.Drawing.Point(921, 26);
+            this.btnTraSach.Name = "btnTraSach";
+            this.btnTraSach.Size = new System.Drawing.Size(86, 27);
+            this.btnTraSach.TabIndex = 7;
+            this.btnTraSach.Text = "Trả sách";
+            this.btnTraSach.UseVisualStyleBackColor = true;
+            // 
             // frmQuanLySach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 810);
+            this.Controls.Add(this.btnTraSach);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.boxSearch);
@@ -112,5 +123,6 @@ namespace LibraryManagement
         private System.Windows.Forms.TextBox boxSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Button btnTraSach;
     }
 }

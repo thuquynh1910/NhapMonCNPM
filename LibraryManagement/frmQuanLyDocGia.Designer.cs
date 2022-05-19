@@ -31,6 +31,7 @@
             this.btnThemDocGia = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnChoMuonSach = new System.Windows.Forms.Button();
+            this.btnTaiLai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +65,22 @@
             this.btnChoMuonSach.UseVisualStyleBackColor = true;
             this.btnChoMuonSach.Click += new System.EventHandler(this.btnChoMuonSach_Click);
             // 
+            // btnTaiLai
+            // 
+            this.btnTaiLai.Location = new System.Drawing.Point(701, 12);
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.Size = new System.Drawing.Size(106, 28);
+            this.btnTaiLai.TabIndex = 3;
+            this.btnTaiLai.Text = "Tải lại";
+            this.btnTaiLai.UseVisualStyleBackColor = true;
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
+            // 
             // frmQuanLyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 810);
+            this.Controls.Add(this.btnTaiLai);
             this.Controls.Add(this.btnChoMuonSach);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnThemDocGia);
@@ -88,5 +100,6 @@
         private System.Windows.Forms.Button btnThemDocGia;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnChoMuonSach;
+        private System.Windows.Forms.Button btnTaiLai;
     }
 }
