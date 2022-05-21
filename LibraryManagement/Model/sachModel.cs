@@ -60,7 +60,7 @@ namespace LibraryManagement.Model
         public void toDatabse()
         {
             SqlConnection con = new SqlConnection(Program.connect);
-            String query = "INSERT INTO QUANLYSACH.dbo.SACH (TenSach, Matheloai, TacGia, NhaXuatBan, NamXuatBan, NgayNhap, KhoangCachXuatBan, MaTinhTrang) OUTPUT INSERTED.MaSach VALUES (N'" + tenSach+"'  ," + maTheLoai.Substring(0, 6) + ",N'" +tacGia+"',N'"+nhaXuatBan+"',"+namXuatBan+",'"+ngayNhap+"',"+khoangCachNamXuatBan+",'"+maTinhTrang+"');";
+            String query = "INSERT INTO QUANLYSACH.dbo.SACH (TenSach, MaTheLoai, TacGia, NhaXuatBan, NamXuatBan, NgayNhap, KhoangCachXuatBan, MaTinhTrang) OUTPUT INSERTED.MaSach VALUES (N'" + tenSach+"'  ,'" + maTheLoai.Substring(0, 6) + "',N'" +tacGia+"',N'"+nhaXuatBan+"',"+namXuatBan+",'"+ngayNhap+"',"+ (DateTime.Now.Year - khoangCachNamXuatBan)+",'TT0003');";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);

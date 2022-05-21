@@ -258,15 +258,7 @@ GROUP BY S.MaTheLoai
 ON GR.MaTheLoai = TL.MaTheLoai
 
 
-SELECT TL.TenTheLoai, GR.SoLuotMuon ,  GR.SoSachDaTra
-FROM (
-
-(
 SELECT S.TenSach , PMS.NgayMuonSach, DATEDIFF(day, PMS.NgayTraSach, PMS.NgayMuonSach) - 90 AS SoNgayTraTre
 FROM SACH S INNER JOIN PHIEUMUONSACH PMS
 ON S.MaSach = PMS.MaSach 
 WHERE MONTH(PMS.NgayMuonSach) = 5 AND YEAR(PMS.NgayMuonSach) = 2022 AND PMS.NgayMuonSach IS NOT NULL
-
-
-) GR INNER JOIN THELOAI TL
-ON GR.MaTheLoai = TL.MaTheLoai

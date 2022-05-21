@@ -68,8 +68,6 @@ namespace LibraryManagement
 
         public static bool login(String _email, String _password)
         {
-            showHomeForm();
-            return true;
             SqlConnection con = new SqlConnection(Program.connect);
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM THUTHU WHERE TaiKhoan='" + _email + "' AND MatKhau='" + _password + "'", con);
             DataTable dt = new DataTable();

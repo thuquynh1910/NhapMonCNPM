@@ -20,6 +20,7 @@ namespace LibraryManagement
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            this.txtLoginResult.Text = "Loading...";
             bool loginResult = frmMain.login(this.boxEmail.Text, this.boxMatKhau.Text);
             if (!loginResult)
             {
