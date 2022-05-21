@@ -46,7 +46,7 @@ namespace LibraryManagement.Model
         public void toDatabse()
         {
             SqlConnection con = new SqlConnection(Program.connect);
-            String query = "INSERT INTO QUANLYSACH.dbo.DOCGIA (HoTen, NgaySinh, DiaChi, email, NgayLapThe, MaLoaiDocGia) OUTPUT INSERTED.MaDocGia VALUES(N'" + this.hoTen + "', '" + this.toSqlFormat(this.ngaySinh) + "'  ,N'" + this.diaChi + "','" + this.email + "','" + this.toSqlFormat(this.ngayLapThe) + "' ,'" + this.maLoaiDocGia + "'); ";
+            String query = "INSERT INTO DOCGIA (HoTen, NgaySinh, DiaChi, email, NgayLapThe, MaLoaiDocGia) OUTPUT INSERTED.MaDocGia VALUES(N'" + this.hoTen + "', '" + this.toSqlFormat(this.ngaySinh) + "'  ,N'" + this.diaChi + "','" + this.email + "','" + this.toSqlFormat(this.ngayLapThe) + "' ,'" + this.maLoaiDocGia + "'); ";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);

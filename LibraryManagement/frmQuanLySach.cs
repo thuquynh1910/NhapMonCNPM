@@ -34,7 +34,7 @@ namespace LibraryManagement
             using (SqlConnection sqlCon = new SqlConnection(Program.connect))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM QUANLYSACH.dbo.SACH ", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT S.MaSach, S.TenSach, TL.TenTheLoai, S.TacGia, S.NhaXuatBan, S.NamXuatBan, S.NgayNhap, S.KhoangCachXuatBan, TT.TenTinhTrang FROM((SACH S INNER JOIN TINHTRANG TT ON S.MaTinhTrang = TT.MaTinhTrang) INNER JOIN THELOAI TL ON S.MaTheLoai = TL.MaTheLoai)", sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
 
@@ -43,12 +43,12 @@ namespace LibraryManagement
                 dataGridView1.Columns["MaSach"].HeaderText = "Mã sách";
                 dataGridView1.Columns["TenSach"].HeaderText = "Tên Sách";
                 dataGridView1.Columns["NhaXuatBan"].HeaderText = "Nhà xuất bản";
-                dataGridView1.Columns["MaTheLoai"].HeaderText = "Mã thể loại";
+                dataGridView1.Columns["TenTheLoai"].HeaderText = "Thể loại";
                 dataGridView1.Columns["TacGia"].HeaderText = "Tác giả";
                 dataGridView1.Columns["NamXuatBan"].HeaderText = "Năm xuất bản";
                 dataGridView1.Columns["NgayNhap"].HeaderText = "Ngày nhập";
                 dataGridView1.Columns["KhoangCachXuatBan"].HeaderText = "Khoảng cách xuất bản";
-                dataGridView1.Columns["MaTinhTrang"].HeaderText = "Mã tình trạng";
+                dataGridView1.Columns["TenTinhTrang"].HeaderText = "Tình trạng";
             }
         }
 

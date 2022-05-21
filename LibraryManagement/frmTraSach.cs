@@ -92,7 +92,7 @@ namespace LibraryManagement
 
             SqlConnection sqlCon = new SqlConnection(Program.connect);
             sqlCon.Open();
-            SqlDataAdapter sqlDa = new SqlDataAdapter("UPDATE PHIEUMUONSACH SET PHIEUMUONSACH.NgayTraSach = GETDATE() WHERE PHIEUMUONSACH.MaPhieu = '" + comboMaPhieu.Text + "'   UPDATE SACH SET SACH.MaTinhTrang = 'TT0002' WHERE SACH.MaSach = '"+ this.boxMaSach.Text +"'", sqlCon);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("UPDATE PHIEUMUONSACH SET PHIEUMUONSACH.NgayTraSach = GETDATE() WHERE PHIEUMUONSACH.MaPhieu = '" + comboMaPhieu.Text + "'   UPDATE SACH SET SACH.MaTinhTrang = 'TT0003' WHERE SACH.MaSach = '"+ this.boxMaSach.Text +"'", sqlCon);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
 

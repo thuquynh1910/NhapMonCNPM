@@ -26,8 +26,19 @@ namespace LibraryManagement
 
         private void frmThemDocGia_Load(object sender, EventArgs e)
         {
-            this.comboLoaiDocGia.Items.Add("X");
-            this.comboLoaiDocGia.Items.Add("Y");
+            // 
+            using (SqlConnection sqlCon = new SqlConnection(Program.connect))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM LOAIDOCGIA", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                for (int i = 0; i < dtbl.Rows.Count; i++)
+                {
+                    comboLoaiDocGia.Items.Add(dtbl.Rows[i].ItemArray[0].ToString() + " " + dtbl.Rows[i].ItemArray[1].ToString());
+                }
+            }
             
         }
 
@@ -39,9 +50,9 @@ namespace LibraryManagement
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            if (this.boxHoVaTen.Text.Length > 0 && this.boxDiaChi.Text.Length > 0 && this.boxEmail.Text.Length > 0 && (this.comboLoaiDocGia.Text == "X" || this.comboLoaiDocGia.Text == "Y"))
+            if (this.boxHoVaTen.Text.Length > 0 && this.boxDiaChi.Text.Length > 0 && this.boxEmail.Text.Length > 0 && this.comboLoaiDocGia.Text.Length > 0)
             {
-                docGiaModel docGia = new docGiaModel(this.boxHoVaTen.Text, this.boxDiaChi.Text, this.boxEmail.Text, this.dateNgayLapThe.Value, this.dateNgaySinh.Value, this.comboLoaiDocGia.Text);
+                docGiaModel docGia = new docGiaModel(this.boxHoVaTen.Text, this.boxDiaChi.Text, this.boxEmail.Text, this.dateNgayLapThe.Value, this.dateNgaySinh.Value, this.comboLoaiDocGia.Text.Substring(0,6));
                 docGia.thuatToan();
                 if (docGia.tuoiDocGia >= 18 && docGia.tuoiDocGia <= 55)
                 {

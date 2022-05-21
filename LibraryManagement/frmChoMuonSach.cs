@@ -14,6 +14,8 @@ namespace LibraryManagement
 {
     public partial class frmChoMuonSach : Form
     {
+        int soSachMuonToiDa = 0;
+        int ngayMuonToiDa = 0;
         public frmChoMuonSach()
         {
             InitializeComponent();
@@ -21,7 +23,19 @@ namespace LibraryManagement
 
         private void frmChoMuonSach_Load(object sender, EventArgs e)
         {
-            
+            using (SqlConnection sqlCon = new SqlConnection(Program.connect))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM QDMUONTRA", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+                soSachMuonToiDa = int.Parse(dtbl.Rows[0].ItemArray[0].ToString()) ;
+                ngayMuonToiDa = int.Parse(dtbl.Rows[0].ItemArray[1].ToString());
+                txtSoNgay.Text = "Trong " + ngayMuonToiDa + " ngày";
+                txtSoSach.Text += soSachMuonToiDa;
+            }
+
+
 
             using (SqlConnection sqlCon = new SqlConnection(Program.connect))
             {
@@ -40,7 +54,26 @@ namespace LibraryManagement
             using (SqlConnection sqlCon = new SqlConnection(Program.connect))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT MaDocGia FROM DOCGIA", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter(@"SELECT [MaDocGia] FROM
+(
+SELECT DG.MaDocGia, DG.HoTen, DG.NgaySinh, DG.DiaChi, DG.Email, DG.NgayLapThe, LDG.TenLoaiDocGia, CASE WHEN SDM.SoSachDaMuon IS NULL THEN 0 ELSE SDM.SoSachDaMuon END AS SoSachDaMuon
+FROM(
+    DOCGIA DG LEFT JOIN(
+            SELECT DG.MaDocGia, COUNT(DG.MaDocGia) AS 'SoSachDaMuon'
+
+            FROM DOCGIA DG INNER JOIN PHIEUMUONSACH PMS
+
+            ON DG.MaDocGia = PMS.MaDocGia
+
+            WHERE PMS.NgayTraSach IS NULL AND PMS.NgayMuonSach > dateadd(day, -"+ ngayMuonToiDa.ToString() +@", getdate())
+
+            GROUP BY DG.MaDocGia) SDM
+
+    ON DG.MaDocGia = SDM.MaDocGia
+)
+INNER JOIN LOAIDOCGIA LDG
+ON DG.MaLoaiDocGia = LDG.MaLoaiDocGia) AS BG
+WHERE SoSachDaMuon < " + soSachMuonToiDa.ToString(), sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
 

@@ -15,6 +15,7 @@ namespace LibraryManagement
         public static Form formQuanLyDocGia = new frmQuanLyDocGia();
         public static Form formQuanLySach = new frmQuanLySach();
         public static Form formThongKe = new frmThongKe();
+        public static Form formQuyDinh = new frmQuyDinh();
         String hoVaTen = "";
         String email = "";
         public frmHome(String _hoVaTen, String _email)
@@ -41,6 +42,10 @@ namespace LibraryManagement
             formThongKe.TopLevel = false;
             formThongKe.AutoScroll = true;
 
+            // init form Thong Ke
+            formQuyDinh.TopLevel = false;
+            formQuyDinh.AutoScroll = true;
+
             // init info user
             txtName.Text = hoVaTen;
             txtEmail.Text = email;
@@ -58,6 +63,7 @@ namespace LibraryManagement
             this.btnSach.BackColor = Color.FromArgb(40, 51, 66);
             this.btnDocGia.BackColor = Color.FromArgb(0, 144, 153);
             this.btnThongKe.BackColor = Color.FromArgb(40, 51, 66);
+            this.btnQuyDinh.BackColor = Color.FromArgb(40, 51, 66);
         }
 
         private void setButtonQuanLySach()
@@ -69,6 +75,7 @@ namespace LibraryManagement
             this.btnSach.BackColor = Color.FromArgb(0, 144, 153);
             this.btnDocGia.BackColor = Color.FromArgb(40, 51, 66);
             this.btnThongKe.BackColor = Color.FromArgb(40, 51, 66);
+            this.btnQuyDinh.BackColor = Color.FromArgb(40, 51, 66);
         }
 
         private void setButtonThongKe()
@@ -80,6 +87,20 @@ namespace LibraryManagement
             this.btnSach.BackColor = Color.FromArgb(40, 51, 66);
             this.btnDocGia.BackColor = Color.FromArgb(40, 51, 66);
             this.btnThongKe.BackColor = Color.FromArgb(0, 144, 153);
+            this.btnQuyDinh.BackColor = Color.FromArgb(40, 51, 66);
+        }
+
+        private void setButtonQuyDinh()
+        {
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(formQuyDinh);
+            formQuyDinh.Show();
+
+            this.btnSach.BackColor = Color.FromArgb(40, 51, 66);
+            this.btnDocGia.BackColor = Color.FromArgb(40, 51, 66);
+            this.btnThongKe.BackColor = Color.FromArgb(40, 51, 66);
+            this.btnQuyDinh.BackColor = Color.FromArgb(0, 144, 153);
+            
         }
 
         private void btnDocGia_Click(object sender, EventArgs e)
@@ -97,6 +118,12 @@ namespace LibraryManagement
             setButtonThongKe();
         }
 
+
+        private void btnQuyDinh_Click(object sender, EventArgs e)
+        {
+            setButtonQuyDinh();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có muốn thoát app?", "Thoát", MessageBoxButtons.YesNo);
@@ -107,5 +134,11 @@ namespace LibraryManagement
 
             
         }
+
+        private void panelContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -29,7 +29,7 @@ namespace LibraryManagement
             using (SqlConnection sqlCon  = new SqlConnection(Program.connect))
             {
                 sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT DG.MaDocGia, DG.HoTen, DG.NgaySinh, DG.DiaChi, DG.Email, DG.NgayLapThe, DG.MaLoaiDocGia, LDG.TenLoaiDocGia FROM DOCGIA DG INNER JOIN LOAIDOCGIA LDG ON DG.MaLoaiDocGia = LDG.MaLoaiDocGia ", sqlCon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT DG.MaDocGia, DG.HoTen, DG.NgaySinh, DG.DiaChi, DG.Email, DG.NgayLapThe, LDG.TenLoaiDocGia, CASE WHEN SDM.SoSachDaMuon IS NULL THEN 0 ELSE SDM.SoSachDaMuon END AS SoSachDaMuon FROM( DOCGIA DG LEFT JOIN( SELECT DG.MaDocGia, COUNT(DG.MaDocGia) AS 'SoSachDaMuon' FROM DOCGIA DG INNER JOIN PHIEUMUONSACH PMS ON DG.MaDocGia = PMS.MaDocGia WHERE PMS.NgayTraSach IS NULL GROUP BY DG.MaDocGia) SDM ON DG.MaDocGia = SDM.MaDocGia) INNER JOIN LOAIDOCGIA LDG ON DG.MaLoaiDocGia = LDG.MaLoaiDocGia", sqlCon);
                 DataTable dtbl = new DataTable();
                 sqlDa.Fill(dtbl);
 
@@ -42,6 +42,7 @@ namespace LibraryManagement
                 dataGridView1.Columns["Email"].HeaderText = "Email";
                 dataGridView1.Columns["NgayLapThe"].HeaderText = "Ngày lập thẻ";
                 dataGridView1.Columns["TenLoaiDocGia"].HeaderText = "Tên loại độc giả";
+                dataGridView1.Columns["SoSachDaMuon"].HeaderText = "Sách đã mượn";
             }
         }
 

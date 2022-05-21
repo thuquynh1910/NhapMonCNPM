@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using LibraryManagement.Model;
 
 namespace LibraryManagement
@@ -20,14 +21,24 @@ namespace LibraryManagement
 
         private void frmThemSach_Load(object sender, EventArgs e)
         {
-            comboTheLoai.Items.Add("A");
-            comboTheLoai.Items.Add("B");
-            comboTheLoai.Items.Add("C");
+            // 
+            using (SqlConnection sqlCon = new SqlConnection(Program.connect))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM THELOAI", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+
+                for (int i = 0; i < dtbl.Rows.Count; i++)
+                {
+                    comboTheLoai.Items.Add(dtbl.Rows[i].ItemArray[0].ToString() + " " + dtbl.Rows[i].ItemArray[1].ToString());
+                }
+            }
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            if (this.boxTenSach.Text.Length > 0 && this.boxTacGia.Text.Length > 0 && this.boxNhaXuatBan.Text.Length > 0 && this.boxTriGia.Text.Length > 0 && (this.comboTheLoai.Text == "A" || this.comboTheLoai.Text == "B" || this.comboTheLoai.Text == "C"))
+            if (this.boxTenSach.Text.Length > 0 && this.boxTacGia.Text.Length > 0 && this.boxNhaXuatBan.Text.Length > 0 && this.boxTriGia.Text.Length > 0 && this.comboTheLoai.Text.Length > 0)
             {
                 sachModel sach = new sachModel(this.boxTenSach.Text, this.comboTheLoai.Text, this.boxTacGia.Text, this.boxNhaXuatBan.Text, int.Parse(this.boxNamXuatBan.Text) , DateTime.Now);
                 sach.thuatToan();

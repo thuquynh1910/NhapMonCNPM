@@ -44,3 +44,4 @@ C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\bin\Debug\Microso
 C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\bin\Debug\Microsoft.AnalysisServices.AppLocal.Core.dll
 C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\obj\Debug\LibraryManagement.csproj.CopyComplete
 C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\obj\Debug\LibraryManagement.frmTraSach.resources
+C:\Users\Anh Tu\Documents\Github\NhapMonCNPM\LibraryManagement\obj\Debug\LibraryManagement.frmQuyDinh.resources

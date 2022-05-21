@@ -30,6 +30,7 @@ namespace LibraryManagement
         private void InitializeComponent()
         {
             this.sideBar = new System.Windows.Forms.Panel();
+            this.btnQuyDinh = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@ namespace LibraryManagement
             // sideBar
             // 
             this.sideBar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.sideBar.Controls.Add(this.btnQuyDinh);
             this.sideBar.Controls.Add(this.btnHelp);
             this.sideBar.Controls.Add(this.btnExit);
             this.sideBar.Controls.Add(this.btnThongKe);
@@ -62,6 +64,20 @@ namespace LibraryManagement
             this.sideBar.Name = "sideBar";
             this.sideBar.Size = new System.Drawing.Size(300, 810);
             this.sideBar.TabIndex = 1;
+            // 
+            // btnQuyDinh
+            // 
+            this.btnQuyDinh.FlatAppearance.BorderSize = 0;
+            this.btnQuyDinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuyDinh.Location = new System.Drawing.Point(0, 309);
+            this.btnQuyDinh.Name = "btnQuyDinh";
+            this.btnQuyDinh.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnQuyDinh.Size = new System.Drawing.Size(300, 40);
+            this.btnQuyDinh.TabIndex = 8;
+            this.btnQuyDinh.Text = "Quy định";
+            this.btnQuyDinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuyDinh.UseVisualStyleBackColor = true;
+            this.btnQuyDinh.Click += new System.EventHandler(this.btnQuyDinh_Click);
             // 
             // btnHelp
             // 
@@ -179,6 +195,7 @@ namespace LibraryManagement
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(1135, 810);
             this.panelContent.TabIndex = 2;
+            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 
             // frmHome
             // 
@@ -211,5 +228,6 @@ namespace LibraryManagement
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnSach;
+        private System.Windows.Forms.Button btnQuyDinh;
     }
 }
